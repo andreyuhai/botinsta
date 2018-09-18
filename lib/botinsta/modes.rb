@@ -43,24 +43,24 @@ module Modes
             end
           end
 
-          break if like_count == @likes_per_tag && follow_count == @follows_per_tag
-        end
-
-        # Here is the code for unfollowing users
-        if !@table_follows.empty? && one_day_past?(@last_follow_time) && @total_unfollows != @unfollows_per_day
-          if unfollow_user(@first_db_entry[:user_id])
-            @total_unfollows += 1
-            print_success_message(action: :unfollow, number: @total_unfollows,
-                                  data: @first_db_entry[:username])
-            delete_from_db(@first_db_entry[:user_id])
-            refresh_db_related
-          else
-            false
+          # Here is the code for unfollowing users
+          if !@table_follows.empty? && one_day_past?(@last_follow_time) && @total_unfollows != @unfollows_per_day
+            if unfollow_user(@first_db_entry[:user_id])
+              @total_unfollows += 1
+              print_success_message(action: :unfollow, number: @total_unfollows,
+                                    data: @first_db_entry[:username])
+              delete_from_db(@first_db_entry[:user_id])
+              refresh_db_related
+            else
+              false
+            end
           end
+          break if like_count == @likes_per_tag && follow_count == @follows_per_tag
         end
       end
     end
   rescue Interrupt
     logout
+    exit
   end
 end
