@@ -4,14 +4,16 @@ require 'json'
 require 'mechanize'
 require 'sequel'
 require 'sqlite3'
+require 'nokogiri'
+
 require_relative 'botinsta/class_methods'
 
 class Botinsta
 
   include ClassMethods
 
-  DEFAULT_PARAMETERS = { tags:              %w[photography fotografia l4l],
-                         tag_blacklist:     %w[nsfw],
+  DEFAULT_PARAMETERS = { tags:              %w[photography fotografia vsco],
+                         tag_blacklist:     %w[nsfw hot sexy],
                          user_blacklist:    [],
                          likes_per_tag:     10,
                          unfollows_per_day: 200,
