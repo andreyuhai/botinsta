@@ -1,3 +1,3 @@
-module Botinsta
-  VERSION = "0.1.0"
+class Botinsta
+  VERSION = '0.1.0'
 end
