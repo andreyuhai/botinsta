@@ -1,5 +1,5 @@
-require "bundler/setup"
-require "botinsta"
+require 'bundler/setup'
+require 'botinsta'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
