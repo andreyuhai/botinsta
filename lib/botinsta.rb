@@ -1,11 +1,10 @@
-require 'botinsta/class_methods'
 require 'colorize'
 require 'hashie'
 require 'json'
 require 'mechanize'
 require 'sequel'
 require 'sqlite3'
-
+require_relative 'botinsta/class_methods'
 
 class Botinsta
 
