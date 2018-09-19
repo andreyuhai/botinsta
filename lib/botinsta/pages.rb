@@ -14,7 +14,8 @@ module Pages
   end
 
   # Returns the .js link of the TagPageContainer
-  #   from which we will extract the query_id.
+  # from which we will extract the query_id.
+  #
   # @param (see #set_query_id)
   # @return [String] Full link of the TagPageContainer.js
   def get_js_link(tag)
@@ -28,8 +29,8 @@ module Pages
   end
 
   # Gets first page JSON string for the tag to extract data
-  #   (i.e. media IDs and owner IDs) and creates a PageData
-  #   instance.
+  # (i.e. media IDs and owner IDs) and creates a PageData
+  # instance.
   #
   # @param (see #set_query_id)
   def get_first_page_data(tag)
@@ -42,9 +43,9 @@ module Pages
   end
 
   # Gets next page JSON string for when we liked all the media
-  #   on the first page and creates a PageData instance.
-  #   This is where we need query_id and
-  #   end_cursor string of the current page.
+  # on the first page and creates a PageData instance.
+  # This is where we need query_id and
+  # end_cursor string of the current page.
   #
   # @param (see #set_query_id)
   def get_next_page_data(tag)
@@ -60,9 +61,9 @@ module Pages
   end
 
   # Gets user page JSON string and parses it
-  #   to create a UserData instance.
+  # to create a UserData instance.
   #
-  # @param use_id [String] User id of the media owner.
+  # @param user_id [String] User id of the media owner.
   def get_user_page_data(user_id)
     url_user_detail = "https://i.instagram.com/api/v1/users/#{user_id}/info/"
     begin
