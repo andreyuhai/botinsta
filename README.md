@@ -86,7 +86,7 @@ We get the above parameters with the help of methods in the module [Pages]() bel
 
 ## Documentation
 
-  * [Documentation](https://www.rubydoc.info/github/andreyuhai/botinsta/master)) 
+  * [Documentation](https://www.rubydoc.info/github/andreyuhai/botinsta/master) 
 
 I will eventually complete all method descriptions and usages. You can help me if you would like to!
 
