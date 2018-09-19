@@ -9,10 +9,9 @@ module Helpers
 
   # Prints success messages depending on the action.
   #
-  # @param [Hash]
   # @option params [Symbol] :action The action performed.
-  # @option params [String, Integer] :data The id that the action is perfomerd on.
-  # @option params [Integer] :number The number showing how many times the action has been performed
+  # @option params [String] :data The id that the action is performed on.
+  # @option params [Integer] :number The number of times that the action has been performed.
   def print_success_message(**params)
     action = case params[:action]
              when :like     then 'liked media'
