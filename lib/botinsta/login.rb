@@ -1,6 +1,9 @@
-# login and logout methods.
+# Contains login and logout methods for the bot.
 module Login
 
+  # Login method to log the user in.
+  # Prints success message on successful login,
+  #   error message otherwise.
   def login
     @agent = Mechanize.new
 
@@ -30,6 +33,8 @@ module Login
     exit
   end
 
+  # Prints action sum and then logs the user out.
+  # @see #print_action_sum
   def logout
     print_action_sum
     print_try_message(action: :logout)
