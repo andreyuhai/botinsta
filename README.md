@@ -1,4 +1,4 @@
-# Botinsta [![Build Status](https://travis-ci.com/andreyuhai/botinsta.svg?branch=master)](https://travis-ci.com/andreyuhai/botinsta)
+# Botinsta [![Build Status](https://travis-ci.com/andreyuhai/botinsta.svg?branch=master)](https://travis-ci.com/andreyuhai/botinsta) [![Gem Version](https://badge.fury.io/rb/botinsta.svg)](https://badge.fury.io/rb/botinsta)
 
 ## Description
 
