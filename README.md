@@ -21,6 +21,7 @@ Or install it yourself as:
 ## Usage
 
 You can use the bot simply like below. It already has default parameters so you could just input your `username` and `password` and let it use the defaults for the rest.
+
 ```ruby
 require 'botinsta'
 
@@ -38,13 +39,17 @@ bot = Botinsta.new ({ username: 'YOUR_USERNAME',
 bot.start
 ```
 
+## Documentation
+
+You can find the documentation of this bot on [rubydoc](https://www.rubydoc.info/github/andreyuhai/botinsta/master). I will eventually complete all method descriptions and usages. You can help me if you would like to!
+
 ## Features
 
   * Follow
   * Like
   * Unfollow people followed after a day
 
-### Features to come
+## Features to come
 
   * Comments
   * Unlike medias
@@ -57,7 +62,7 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
-## Gems Used
+## Gems used
 
   * Colorize
   * Hashie
@@ -70,6 +75,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/andreyuhai/botinsta.
+
 If you like the bot and want to see the new features very soon, please do not forget to star the repo to let me now you are interested. Boost me! :)
 
 ## License
