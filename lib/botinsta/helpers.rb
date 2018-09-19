@@ -79,7 +79,7 @@ module Helpers
 
   # Prints action sum. Used before logging out.
   #
-  # @example print_action_sum usage
+  # @example
   #   bot.print_action_sum # => 2018-09-19 17:41:11	Liked: 0 Followed: 0 Unfollowed: 0
   def print_action_sum
     string =  'Liked: ' + @total_likes.to_s.colorize(:red) +
@@ -127,7 +127,7 @@ module Helpers
   end
 
   # Reassigns the database related variables to the first entry
-  #   in the database.
+  # in the database.
   # Used after a deletion from the database.
   def refresh_db_related
     return if @table_follows.empty?
@@ -137,7 +137,8 @@ module Helpers
   end
 
   # The method that is used to delete a user from the database
-  #   after unfollowing the user.
+  # after unfollowing the user.
+  #
   # @todo This method needs to be replaced with a better and DRY one.
   # @param user_id [String, Integer] id of the user to be unfollowed.
   def delete_from_db(user_id)
