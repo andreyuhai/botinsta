@@ -28,8 +28,8 @@ Or install it yourself as:
 
   * Follow
   * Like
-  * Unfollow people followed after a day. Creates a local database for that.
-  * Avoid liking blacklisted tags
+  * Unfollow people followed after a day. Creates a local database for that matter.
+  * Avoid liking medias which has blacklisted tags
 
 ## Features to come
 
@@ -58,6 +58,10 @@ bot = Botinsta.new ({ username: 'YOUR_USERNAME',
 bot.start
 ```
 
+**IMPORTANT:** First of all this bot doesn't work on a daily basis. It just loops through all the tags given to it and accomplishes its task. This is all it does. If you want to reuse it, you should run it again or look for other automation techniques to run this bot everyday (i.e. crontab or some other techniques) until I figure out a logical method to add this feature. I will also add techniques of how to automate this bot using other automation techniques really soon.  
+
+---
+
 The bot loops through each tag liking as many images as `@likes_per_tag` and following as many users as `@follows_per_tag`.
 
 Liking medias and following users from the tag's first page is easy because all you have to do is:
@@ -82,7 +86,11 @@ An example of the link:
 
 As you can see we need to provide the query\_id (query\_hash) and end\_cursor (the same as `after`) in the link.
 
-We get the above parameters with the help of methods in the module [Pages]() below:
+We get the above parameters with the help of methods in the module [Pages](https://www.rubydoc.info/github/andreyuhai/botinsta/master/Pages).
+
+The rest is just doing the same controls in a loop to like, follow & unfollow (just for now). 
+
+TODO: More detailed explanation will be here.
 
 ## Documentation
 
