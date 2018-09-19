@@ -10,6 +10,10 @@ Well, tag-based means that the bot works based on solely the tags you specified.
 
 ## Installation
 
+Since this bot uses a local database to track follows and media likes. You need to install `libsqlite3-dev`.
+
+    $ sudo apt-get install libsqlite3-dev
+
 Add this line to your application's Gemfile:
 
 ```ruby
