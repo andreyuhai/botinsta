@@ -34,7 +34,7 @@ module Login
   end
 
   # Prints action sum and then logs the user out.
-  # @see #print_action_sum
+  # @see print_action_sum
   def logout
     print_action_sum
     print_try_message(action: :logout)
