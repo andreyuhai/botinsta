@@ -1,4 +1,4 @@
-# Botinsta
+# Botinsta [![Build Status](https://travis-ci.com/andreyuhai/botinsta.svg?branch=master)](https://travis-ci.com/andreyuhai/botinsta)
 
 ## Description
 
