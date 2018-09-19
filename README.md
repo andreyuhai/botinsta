@@ -1,5 +1,7 @@
 # Botinsta
 
+##Description
+
 This is a **tag-based Instagram bot** I've created under the influence of other cool Instagram bots [instabot.py](https://github.com/instabot-py) and [instabot.rb](https://github.com/eVanilla/instabot.rb/) to improve my Ruby skills.
 
 #### What do you mean tag-based?!
@@ -21,6 +23,21 @@ And then execute:
 Or install it yourself as:
 
     $ gem install botinsta
+
+## Features
+
+  * Follow
+  * Like
+  * Unfollow people followed after a day. Creates a local database for that.
+  * Avoid liking blacklisted tags
+
+## Features to come
+
+  * Comments
+  * Unlike medias
+  * Avoid following blacklisted users
+
+I am still not sure what else to add but if you have any idea don't hesitate to hit me up or send me a pull request!
 
 ## Usage & How it works
 
@@ -54,8 +71,8 @@ It gets complicated when you liked all the medias on the first page and need to 
 
 To get the next page you need two things:
 
-* query_id (query_hash)
-* end_cursor
+  * query\_id (query\_hash)
+  * end\_cursor
 
 which will be used in GET requests to get the JSON string for the next page.
 
@@ -63,24 +80,15 @@ An example of the link:
 
     https://www.instagram.com/graphql/query/?query_hash=1780c1b186e2c37de9f7da95ce41bb67&variables={"tag_name":"photography","first":4,"after":"AQAiksCP1Uzk5-bXZ3qnwUsA89YRn1LBia9_yDFeWm5S1KTfzyU8eH8EFjq8LPuFOemdkRjzWb8_5vmyQ8Gnj-sTCfVGwRHs8WoKhPtBncmLbg"}
 
-As you can see we need to provide the query_id (query_hash) and end_cursor (the same as `after`) in the link.
+As you can see we need to provide the query\_id (query\_hash) and end\_cursor (the same as `after`) in the link.
+
+We get the above parameters with the help of methods in the module [Pages]() below:
 
 ## Documentation
 
-You can find the documentation of this bot on [rubydoc](https://www.rubydoc.info/github/andreyuhai/botinsta/master). I will eventually complete all method descriptions and usages. You can help me if you would like to!
+  * [Documentation](https://www.rubydoc.info/github/andreyuhai/botinsta/master)) 
 
-## Features
-
-  * Follow
-  * Like
-  * Unfollow people followed after a day
-
-## Features to come
-
-  * Comments
-  * Unlike medias
-
-I am still not sure what else to add but if you have any idea don't hesitate to hit me up or send me a pull request!
+I will eventually complete all method descriptions and usages. You can help me if you would like to!
 
 ## Development
 
