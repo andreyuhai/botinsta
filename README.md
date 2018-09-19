@@ -102,7 +102,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/andreyuhai/botinsta.
 
-If you like the bot and want to see the new features very soon, please do not forget to star the repo to let me now you are interested. Boost me! :)
+If you like the bot and want to see the new features very soon, please do not forget to star the repo to let me now you are interested. Boost me!  :rocket:  :blush:
 
 ## License
 
