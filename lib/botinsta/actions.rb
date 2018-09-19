@@ -1,4 +1,5 @@
-# Actions you can do on Instagram
+# Various actions you can do on Instagram
+# and other related methods.
 module Actions
 
   # Likes media given by media id.
@@ -18,10 +19,10 @@ module Actions
     response.code == '200' && response_data['status'] == 'ok' ? true : false
   end
 
-  # Unikes media given by media id.
+  # Unlikes media given by media id.
   #
   # @param media_id [String]
-  # @return [true, false] returns true on success, false otherwise.
+  # @return (see #like_media)
   def unlike_media(media_id)
     url_unlike = "https://www.instagram.com/web/likes/#{media_id}/unlike/"
     print_try_message(action: :unlike, data: media_id)
@@ -38,7 +39,7 @@ module Actions
   # Follows user given by user_id.
   #
   # @param user_id [String]
-  # @return [true, false] returns true on success, false otherwise.
+  # @return (see #like_media)
   def follow_user(user_id)
     url_follow = "https://www.instagram.com/web/friendships/#{user_id}/follow/"
     print_try_message(action: :follow, data: user_id)
@@ -55,7 +56,7 @@ module Actions
   # Unfollows user given by user_id.
   #
   # @param user_id [String]
-  # @return [true, false] returns true on success, false otherwise.
+  # @return (see #like_media)
   def unfollow_user(user_id)
     url_unfollow = "https://www.instagram.com/web/friendships/#{user_id}/unfollow/"
     print_try_message(action: :unfollow, data: user_id)
@@ -71,8 +72,8 @@ module Actions
 
   # Likes the media if it doesn't exist in the database.
   #
-  # @param media [MediaData]
-  # @return [true,false] returns true on success, false otherwise.
+  # @param media [MediaData] a MediaData instance.
+  # @return (see #like_media)
   def like_if_not_in_db(media)
     return false if media.exists_in_db?(@table_likes)
 
@@ -89,8 +90,8 @@ module Actions
 
   # Follows the user if it doesn't exist in the database.
   #
-  # @param user [MediaData]
-  # @return [true,false] returns true on success, false otherwise.
+  # @param user [UserData] a UserData instance.
+  # @return (see #like_media)
   def follow_if_not_in_db(user)
     return false if user.exists_in_db?(@table_follows)
 
