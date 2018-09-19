@@ -1,6 +1,6 @@
 # Botinsta
 
-##Description
+## Description
 
 This is a **tag-based Instagram bot** I've created under the influence of other cool Instagram bots [instabot.py](https://github.com/instabot-py) and [instabot.rb](https://github.com/eVanilla/instabot.rb/) to improve my Ruby skills.
 
