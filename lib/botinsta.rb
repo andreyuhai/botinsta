@@ -8,6 +8,8 @@ require 'nokogiri'
 
 require_relative 'botinsta/class_methods'
 
+# This is our main class from which we will be
+# instantiating our bot.
 class Botinsta
 
   include ClassMethods
@@ -16,7 +18,7 @@ class Botinsta
                          tag_blacklist:     %w[nsfw hot sexy],
                          user_blacklist:    [],
                          likes_per_tag:     10,
-                         unfollows_per_day: 200,
+                         unfollows_per_run: 200,
                          follows_per_tag:   50
   }.freeze
 
@@ -31,7 +33,7 @@ class Botinsta
     @user_blacklist     = params[:user_blacklist]
     @likes_per_tag      = params[:likes_per_tag]
     @follows_per_tag    = params[:follows_per_tag]
-    @unfollows_per_day  = params[:unfollows_per_day]
+    @unfollows_per_run  = params[:unfollows_per_run]
 
     @total_likes        = 0
     @total_follows      = 0

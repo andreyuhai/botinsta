@@ -5,8 +5,8 @@ module Login
   # Prints success message on successful login,
   #   error message otherwise.
   # @example Login example
-  #   bot.login #=> 2018-09-19 17:39:45	Trying to login ...
-  #             #=> 2018-09-19 17:39:47	Successfully logged in as andreyuhai
+  #   bot.login # => 2018-09-19 17:39:45	Trying to login ...
+  #             # => 2018-09-19 17:39:47	Successfully logged in as andreyuhai
   def login
     @agent = Mechanize.new
 
@@ -38,8 +38,8 @@ module Login
 
   # Prints action sum and then logs the user out.
   # @example Logout example
-  #   bot.logout #=> "2018-09-19 17:41:11	Liked: 0 Followed: 0 Unfollowed: 0"
-  #                  "2018-09-19 17:41:11	Trying to logout ..."
+  #   bot.logout # => 2018-09-19 17:41:11	Liked: 0 Followed: 0 Unfollowed: 0
+  #              # => 2018-09-19 17:41:11	Trying to logout ...
   def logout
     print_action_sum
     print_try_message(action: :logout)

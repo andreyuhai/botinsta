@@ -1,9 +1,11 @@
-# Contains bot functions.
+# Contains bot modes.
+# The bot has only one mode for now, which is tag based mode.
+# In this mode bot works on a tag basis. Gets medias from specified tags,
+#   likes them and follows the owner of the media until it fulfills
+#   its like and follow limits for the day.
 module Modes
 
   def tag_based_mode
-
-    # For each tag we should like as many images as our per tag limit.
     @tags.each do |tag|
       like_count = 0; follow_count = 0
       is_first_page = true
@@ -23,8 +25,6 @@ module Modes
           @media = MediaData.new(media)
           next if @media.blacklisted_tag?(@tag_blacklist)
 
-          get_user_page_data(@media.owner)
-
           # Here is the code for liking stuff.
           if like_count != @likes_per_tag
             if like_if_not_in_db(@media)
@@ -36,7 +36,7 @@ module Modes
 
           # Here is the code for following users.
           if follow_count != @follows_per_tag
-            if follow_if_not_in_db(@user)
+            if get_user_page_data(@media.owner) && follow_if_not_in_db(@user)
               follow_count += 1
             else
               print_error_message(action: :follow, data: @user.username)
@@ -44,7 +44,7 @@ module Modes
           end
 
           # Here is the code for unfollowing users
-          if !@table_follows.empty? && one_day_past?(@last_follow_time) && @total_unfollows != @unfollows_per_day
+          if !@table_follows.empty? && one_day_past?(@last_follow_time) && @total_unfollows != @unfollows_per_run
             if unfollow_user(@first_db_entry[:user_id])
               @total_unfollows += 1
               print_success_message(action: :unfollow, number: @total_unfollows,
