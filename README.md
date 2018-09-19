@@ -45,7 +45,7 @@ The bot loops through each tag liking as many images as `@likes_per_tag` and fol
 
 Liking medias and following users from the tag's first page is easy because all you have to do is:
 
-`https://instagram.com/explore/tags/YOURTAG/?__a=1`
+   https://instagram.com/explore/tags/YOURTAG/?__a=1
 
 to navigate to above link and get the JSON string then parse it accordingly
 to extract necessary information (i.e. media ID, owner ID).
