@@ -38,6 +38,7 @@ module Modes
           if follow_count != @follows_per_tag
             if get_user_page_data(@media.owner) && follow_if_not_in_db(@user)
               follow_count += 1
+              refresh_db_related if follow_count == 1
             else
               print_error_message(action: :follow, data: @user.username)
             end
