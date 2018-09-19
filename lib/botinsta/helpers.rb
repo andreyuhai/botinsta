@@ -3,6 +3,8 @@
 module Helpers
 
   # Prints out the current time
+  # @example
+  #   print_time_stamp #=> "2018-09-19 12:14:43"
   def print_time_stamp
     print "#{Time.now.strftime('%Y-%m-%d %H:%M:%S')}\t"
   end
@@ -84,6 +86,9 @@ module Helpers
     sleep(sleep_time - 1)
   end
 
+  # Handles the creation and connection of a database and its tables.
+  #
+  # 
   def handle_database_creation
     database = Sequel.sqlite('./actions_db.db') # memory database, requires sqlite3
     database.create_table? :"#{@username}_follows" do
@@ -115,6 +120,10 @@ module Helpers
     @table_follows.where(user_id: user_id).delete
   end
 
+  # Calculates if a day is past since the first follow entry in the database.
+  #
+  # @param last_time [Time] a Time instance.
+  # @return [true, false] true if a day is past since the first follow entry in the database, false otherwise.
   def one_day_past?(last_time)
     ((Time.now - last_time) / 86_400) >= 1
   end
