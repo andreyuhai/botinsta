@@ -1,6 +1,10 @@
 # Botinsta
 
-This is an Instagram bot I've created under the influence of other cool Instagram bots [instabot.py](https://github.com/instabot-py) and [instabot.rb](https://github.com/eVanilla/instabot.rb/) to improve my Ruby skills.
+This is a **tag-based Instagram bot** I've created under the influence of other cool Instagram bots [instabot.py](https://github.com/instabot-py) and [instabot.rb](https://github.com/eVanilla/instabot.rb/) to improve my Ruby skills.
+
+##### What do you mean tag-based?!
+
+Well, tag-based means that the bot works based on solely the tags you specified. You specify the tags you want the bot to like medias and follow users from and it loops through all tags liking a number of medias specified by you and also following the owners of medias it liked. See [how it works](#usage-how-it-works)
 
 ## Installation
 
@@ -18,7 +22,7 @@ Or install it yourself as:
 
     $ gem install botinsta
 
-## Usage
+## Usage & How it works
 
 You can use the bot simply like below. It already has default parameters so you could just input your `username` and `password` and let it use the defaults for the rest.
 
@@ -28,16 +32,38 @@ require 'botinsta'
 bot = Botinsta.new ({ username: 'YOUR_USERNAME',
                       password: 'YOUR_PASSWORD',
                       tags:              ['photography','vsco','fotografia'],
-                      likes_per_tag:     20,
                       tag_blacklist:     ['nsfw','sexy','hot'],
-                      likes_per_day:     1000,
-                      unfollows_per_day: 200,
-                      follows_per_day:   250,
+                      likes_per_tag:     20,
+                      unfollows_per_run: 200,
                       follows_per_tag:   10
 })
 
 bot.start
 ```
+
+The bot loops through each tag liking as many images as `@likes_per_tag` and following as many users as `@follows_per_tag`.
+
+Liking medias and following users from the tag's first page is easy because all you have to do is:
+
+`https://instagram.com/explore/tags/YOURTAG/?__a=1`
+
+to navigate to above link and get the JSON string then parse it accordingly
+to extract necessary information (i.e. media ID, owner ID).
+
+It gets complicated when you liked all the medias on the first page and need to get the next page -with next page I am referring to when you scroll down the page to load more content- to continue extracting data, liking medias & following users. So we can do the same with a `GET` request instead since we are using `Mechanize` for automation.
+
+To get the next page you need two things:
+
+* query_id (query_hash)
+* end_cursor
+
+which will be used in GET requests to get the JSON string for the next page.
+
+An example of the link:
+
+`https://www.instagram.com/graphql/query/?query_hash=1780c1b186e2c37de9f7da95ce41bb67&variables={"tag_name":"photography","first":4,"after":"AQAiksCP1Uzk5-bXZ3qnwUsA89YRn1LBia9_yDFeWm5S1KTfzyU8eH8EFjq8LPuFOemdkRjzWb8_5vmyQ8Gnj-sTCfVGwRHs8WoKhPtBncmLbg"}`
+
+As you can see we need to provide the query_id (query_hash) and end_cursor (the same as `after`) in the link.
 
 ## Documentation
 
@@ -54,7 +80,7 @@ You can find the documentation of this bot on [rubydoc](https://www.rubydoc.info
   * Comments
   * Unlike medias
 
-I am still not sure what else too add but if you have any idea don't hesitate to hit me up or send me a pull request!
+I am still not sure what else to add but if you have any idea don't hesitate to hit me up or send me a pull request!
 
 ## Development
 
