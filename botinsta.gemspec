@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['yuhai.ndre@gmail.com']
 
   spec.summary       = 'Ruby Instagram bot'
-  spec.description   = 'An Instagram bot working without any API.'
+  spec.description   = 'A tag-based Instagram bot which works without using any Instagram API.'
   spec.homepage      = 'https://github.com/andreyuhai/botinsta'
   spec.license       = 'MIT'
 
