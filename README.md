@@ -2,9 +2,9 @@
 
 This is a **tag-based Instagram bot** I've created under the influence of other cool Instagram bots [instabot.py](https://github.com/instabot-py) and [instabot.rb](https://github.com/eVanilla/instabot.rb/) to improve my Ruby skills.
 
-##### What do you mean tag-based?!
+#### What do you mean tag-based?!
 
-Well, tag-based means that the bot works based on solely the tags you specified. You specify the tags you want the bot to like medias and follow users from and it loops through all tags liking a number of medias specified by you and also following the owners of medias it liked. See [how it works](#usage-how-it-works)
+Well, tag-based means that the bot works based on solely the tags you specified. You specify the tags you want the bot to like medias and follow users from and it loops through all tags liking a number of medias specified by you and also following the owners of medias it liked. See [how it works](#usage--how-it-works)
 
 ## Installation
 
@@ -50,7 +50,7 @@ Liking medias and following users from the tag's first page is easy because all 
 to navigate to above link and get the JSON string then parse it accordingly
 to extract necessary information (i.e. media ID, owner ID).
 
-It gets complicated when you liked all the medias on the first page and need to get the next page -with next page I am referring to when you scroll down the page to load more content- to continue extracting data, liking medias & following users. So we can do the same with a `GET` request instead since we are using `Mechanize` for automation.
+It gets complicated when you liked all the medias on the first page and need to get the next page—with next page I am referring to when you scroll down the page to load more content—to continue extracting data, liking medias & following users. So we can do the same with a `GET` request instead since we are using `Mechanize` for automation.
 
 To get the next page you need two things:
 
@@ -61,7 +61,7 @@ which will be used in GET requests to get the JSON string for the next page.
 
 An example of the link:
 
-`https://www.instagram.com/graphql/query/?query_hash=1780c1b186e2c37de9f7da95ce41bb67&variables={"tag_name":"photography","first":4,"after":"AQAiksCP1Uzk5-bXZ3qnwUsA89YRn1LBia9_yDFeWm5S1KTfzyU8eH8EFjq8LPuFOemdkRjzWb8_5vmyQ8Gnj-sTCfVGwRHs8WoKhPtBncmLbg"}`
+    https://www.instagram.com/graphql/query/?query_hash=1780c1b186e2c37de9f7da95ce41bb67&variables={"tag_name":"photography","first":4,"after":"AQAiksCP1Uzk5-bXZ3qnwUsA89YRn1LBia9_yDFeWm5S1KTfzyU8eH8EFjq8LPuFOemdkRjzWb8_5vmyQ8Gnj-sTCfVGwRHs8WoKhPtBncmLbg"}
 
 As you can see we need to provide the query_id (query_hash) and end_cursor (the same as `after`) in the link.
 
