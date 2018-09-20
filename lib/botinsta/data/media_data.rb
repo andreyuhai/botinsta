@@ -11,7 +11,7 @@ class MediaData
     @is_video           = data.deep_find('is_video')
     @comments_disabled  = data.deep_find('comments_disabled')
     @text               = data.deep_find('text')
-    @tags               = @text.scan(/#[a-zA-Z0-9]+/)
+    @tags               = @text.nil? ? [] : @text.scan(/#[a-zA-Z0-9]+/)
     @shortcode          = data.deep_find('shortcode')
 
   end
