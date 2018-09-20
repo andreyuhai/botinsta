@@ -2,7 +2,7 @@ require 'botinsta'
 
 bot = Botinsta.new ({ username: 'YOUR_USERNAME',
                       password: 'YOUR_PASSWORD',
-                      tags:              ['photography','vsco','b&w'],
+                      tags:              ['photography','vsco','bnw'],
                       tag_blacklist:     ['nsfw','sexy','hot'],
                       likes_per_tag:     60,
                       unfollows_per_run: 200,
