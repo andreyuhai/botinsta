@@ -32,7 +32,7 @@ Or install it yourself as:
 
   * Follow
   * Like
-  * Unfollow people followed after a day. Creates a local database for that matter.
+  * Unfollow people followed ~~after a day~~ whenever you want. Creates a local database for that matter.
   * Avoid liking medias which has blacklisted tags
 
 ## Features to come
@@ -56,7 +56,12 @@ bot = Botinsta.new ({ username: 'YOUR_USERNAME',
                       tag_blacklist:     ['nsfw','sexy','hot'],
                       likes_per_tag:     20,
                       unfollows_per_run: 200,
-                      follows_per_tag:   10
+                      follows_per_tag:   10,
+	 	      unfollow_threshold:  {    seconds: 0,
+                                                minutes: 0,
+                                                hours:   1,
+                                                days:    0
+                         }
 })
 
 bot.start
