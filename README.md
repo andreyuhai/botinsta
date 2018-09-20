@@ -52,7 +52,7 @@ require 'botinsta'
 
 bot = Botinsta.new ({ username: 'YOUR_USERNAME',
                       password: 'YOUR_PASSWORD',
-                      tags:              ['photography','vsco','fotografia'],
+                      tags:              ['photography','vsco','bnw'],
                       tag_blacklist:     ['nsfw','sexy','hot'],
                       likes_per_tag:     20,
                       unfollows_per_run: 200,
@@ -67,7 +67,7 @@ bot = Botinsta.new ({ username: 'YOUR_USERNAME',
 bot.start
 ```
 
-**IMPORTANT:** First of all this bot doesn't work on a daily basis. It just loops through all the tags given to it and accomplishes its task. This is all it does. If you want to reuse it, you should run it again or look for other automation techniques to run this bot everyday (i.e. crontab or some other techniques) until I figure out a logical method to add this feature. I will also add techniques of how to automate this bot using other automation techniques really soon.  
+**IMPORTANT:** First of all this bot doesn't work on a daily basis. It just loops through all the tags given to it and accomplishes its task. This is all it does. If you want to reuse it, you should run it again or look for other automation techniques to run this bot everyday (i.e. crontab or some other techniques) until I figure out a logical method to implement this feature. I will also add techniques of how to run this bot everyday with the help of crontab and other automation tools.  
 
 ---
 
@@ -123,11 +123,11 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
   * Sequel
   * Sqlite3
 
-## Contributing
+## Contributing  :star:
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/andreyuhai/botinsta.
 
-If you like the bot and want to see the new features very soon, please do not forget to star the repo to let me now you are interested. Boost me!  :rocket:  :blush:
+If you like the bot and want to see the new features very soon, please do not forget to star:star2: the repo to let me now you are interested. Boost me!  :rocket:  :blush:
 
 ## License
 
