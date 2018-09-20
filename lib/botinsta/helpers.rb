@@ -145,12 +145,19 @@ module Helpers
     @table_follows.where(user_id: user_id).delete
   end
 
-  # Calculates if a day is past since the first follow entry in the database.
+  # Calculates whether the given threshold is past or not to
+  # start unfollowing users from the database.
   #
   # @param last_time [Time] a Time instance, used with @last_follow_time.
   # @return [Boolean] true if a day is past since
   #   the first follow entry in the database, false otherwise.
-  def one_day_past?(last_time)
-    ((Time.now - last_time) / 86_400) >= 1
+  def unfollow_threshold_past?(last_time)
+    days    = @unfollow_threshold[:days]    ||= 0
+    hours   = @unfollow_threshold[:hours]   ||= 0
+    minutes = @unfollow_threshold[:minutes] ||= 0
+    seconds = @unfollow_threshold[:seconds] ||= 0
+
+    total_in_seconds = days * 86_400 + hours * 3600 + minutes * 60 + seconds
+    ((Time.now - last_time) / total_in_seconds) >= 1
   end
 end
