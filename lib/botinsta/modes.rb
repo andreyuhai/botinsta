@@ -17,7 +17,7 @@ module Modes
           get_first_page_data(tag)
           is_first_page = false
           break if @page.medias_empty?
-        elsif like_count == @page.media_count && @page.has_next_page?
+        elsif @page.next_page?
           get_next_page_data(tag)
         end
         @page.medias.each do |media|
@@ -45,7 +45,7 @@ module Modes
           end
 
           # Here is the code for unfollowing users
-          if !@table_follows.empty? && one_day_past?(@last_follow_time) && @total_unfollows != @unfollows_per_run
+          if !@table_follows.empty? && unfollow_threshold_past?(@last_follow_time) && @total_unfollows != @unfollows_per_run
             if unfollow_user(@first_db_entry[:user_id])
               @total_unfollows += 1
               print_success_message(action: :unfollow, number: @total_unfollows,
