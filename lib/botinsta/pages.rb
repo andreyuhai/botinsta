@@ -50,7 +50,7 @@ module Pages
   # @param (see #set_query_id)
   def get_next_page_data(tag)
     print_time_stamp
-    puts 'Getting the next page for the tag '.colorize(:red) + "#{tag}"
+    puts 'Getting the next page for the tag '.colorize(:blue) + "#{tag}"
     next_page_link =  "https://www.instagram.com/graphql/query/?query_hash=#{@query_id}&"\
                       "variables={\"tag_name\":\"#{tag}\"," \
                       "\"first\":10,\"after\":\"#{@page.end_cursor}\"}"
