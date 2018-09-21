@@ -5,7 +5,7 @@ module Actions
   # Likes media given by media id.
   #
   # @param media_id [String]
-  # @return [true, false] returns true on success, false otherwise.
+  # @return [Boolean] returns true on success, false otherwise.
   def like_media(media_id)
     url_like = "https://www.instagram.com/web/likes/#{media_id}/like/"
     print_try_message(action: :like, data: media_id)
