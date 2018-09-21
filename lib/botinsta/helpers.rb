@@ -89,7 +89,7 @@ module Helpers
     puts string
   end
 
-  # Prints out when the current is set to some specified tag.
+  # Prints out when the current is set to some other tag.
   #
   # @param tag [String] current tag.
   def print_tag_message(tag)
@@ -97,6 +97,10 @@ module Helpers
     puts 'Current tag is set to '.colorize(:blue) + '#' + tag
   end
 
+  # Sleep for a random number of seconds between min and max params.
+  #
+  # @param min [Integer] Minimum number of sleep time (seconds).
+  # @param max [Integer] Maximum number of sleep time (seconds).
   def sleep_rand(min, max)
     sleep_time = rand(min..max)
     sleep(1)
